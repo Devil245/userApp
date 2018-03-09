@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="myApp">  
+<script src="angular.min.js"></script>
+	<script src="angular-resource.min.js"></script>
+	<script src="app.js"></script>
+	<!-- link rel="stylesheet" href="./css/style.css">	
+	<link rel="stylesheet" href="./css/theme-default.css">
+	<link rel="stylesheet" href="./css/theme-blue.css">
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/custom.css"-->
+ <body>
+ <div ng-controller="UserController">
+    <h1> User </h1>
+	<form name="userForm" >
+	  
+	 <table>
+	      <tr><th>ID </th> <th>Name</th> <th>email</th><th>Mobile</th></tr>
+	      <tr ng-repeat="u in users">
+	         <td><span ng-bind="u.id"></span></td>
+	         <td><span ng-bind="u.name"></span></td>
+	         <td><span ng-bind="u.email"></span></td>
+	         <td><span ng-bind="u.phoneNo"></span></td>
+	         <td>
+		  </tr>	
+	</table>
+	<div class="form-group" >
+        <label>Name</label>
+        <input class=form-control type="text" id="Name" ng-model="userForm.name" placeholder="Name" autocomplete="off">
+    </div>
+    <div class="form-group" >
+        <label>Email</label>
+        <input class=form-control type="text" id="Email" ng-model="userForm.email" placeholder="Email" autocomplete="off">
+    </div>
+    
+    <div class="form-group" >
+        <label>Password</label>
+        <input class=form-control type="text" id="password" ng-model="userForm.password" placeholder="Password" autocomplete="off">
+    </div>
+    
+    <div class="form-group" >
+        <label>Mobile</label>
+        <input class=form-control type="text" id="Mobile" ng-model="userForm.mobile" placeholder="Mobile" autocomplete="off">
+    </div>
+
+ 
+ <div class="btn-wrapper">
+  <div class="row-gutter-5">
+    <div class="col-md-4 col-xs-6 col-sm-6">
+      <button type="button" data-ng-click="create()" id="Create" >Create</button>
+    </div>
+    <div class="col-md-4 col-xs-6 col-sm-6">
+      <button type="button" data-ng-click="refresh()" id="refresh">Refresh</button>
+    </div>
+  </div>
+</div><br><br>
+{{message}}
+	
+	<div class="form-group" >
+        <label class=blue_font>ID</label>
+        <input class=form-control type="text" id="ID" ng-model="userForm.id" placeholder="ID" autocomplete="off">
+    </div>      
+	 <div class="btn-wrapper">
+  <div class="row-gutter-5">
+    <div class="col-md-4 col-xs-6 col-sm-6">
+      <button class="btn btn_blue" type="button" data-ng-click="deleteRec()" id="Delete" >Delete</button>
+    </div>
+    <div class="col-md-4 col-xs-6 col-sm-6">
+      <button class="btn btn_blue" type="button" data-ng-click="update()" id="Update">Update</button>
+    </div>
+    </div>
+</div>     
+	      
+	</form>
+	</div>
+	
+ </body>
+</html>   
